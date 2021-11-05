@@ -1,0 +1,44 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity sequence_detector_TB is end entity;
+
+architecture ARC of sequence_detector_TB is
+	signal myInput, clk , rst: std_logic := '0';
+	signal myOutput: std_logic;
+
+begin
+
+	UUT: entity WORK.sequence_detector PORT MAP (myInput, clk, rst, myOutput);
+	
+	
+
+	clk <= NOT clk AFTER 80 ns;
+	
+
+	sequence_test: PROCESS begin
+		rst <= '1';
+		WAIT FOR 10 ns;
+		rst <= not rst;
+		wait for 70 ns;
+		myInput <= '1';
+		wait for 160 ns;
+		myInput <= '1';
+		wait for 160 ns;
+		myInput <= '0';
+		wait for 160 ns;
+		myInput <= '1';
+		wait for 160 ns;
+		myInput <= '0';
+		wait for 160 ns;
+		myInput <= '1';
+		wait for 8000000 ns;
+	end process sequence_test;
+
+		
+	
+
+end architecture arc;
+
+
