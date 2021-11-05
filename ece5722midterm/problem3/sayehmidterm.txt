@@ -1,0 +1,79 @@
+ISR1:
+
+clw
+wpl
+mil r0 01
+mih r0 00 - increment
+mil r1 01
+mih r1 41 -- command
+mil r2 02
+mih r2 41 -- address
+mil r3 03
+mih r3 41 -- count
+wph
+mil r4 00
+mih r4 55 -- buffer location
+mil r5 01
+mih r5 00 -- increment
+mil r6 FF
+mih r6 55 -- max
+L1 add r4 r5 -- increment buffer location by 1
+wpl
+add r3 r0 -- increment count register by 1
+wph
+cmp r6 r4
+brc L3 -- branch if equal
+jpr L1
+L3
+lda r2 r0 -- load address into register
+add r1 r0 -- add to bit 0 of command register as a "go" flag
+
+
+
+ISR2 C code:
+
+reg1;
+dataArray[256];
+int main(){
+  int MAX = 0;
+  for (int i = 0; i < 256; i = i + 1){
+    if (dataArray[i] > MAX){
+      MAX = dataArray[i];
+    }
+  }  
+  reg1 = MAX;
+  return MAX;
+};
+
+ISR2 ESAYEH code:
+wph
+mil r4 01
+mih r4 00 -- increment
+mil r5 00
+mih r5 00 
+mil r6 FF
+mih r6 00 -- max (for loop)
+mil r7 00
+mih r7 00 -- count
+wpl
+mil r0 01
+mih r0 00 -- increment
+mil r1 00
+mih r1 00 -- eSAYEH R1 location
+mil r2 00
+mih r2 09 -- storage location
+mil r3 00
+mih r3 00 -- max holder
+L1 cmp r3| r2| -- see if r2 is larger
+brc L2 -- branch to L2 if it is
+add r2 r0 -- increment memory address
+wph
+add r7 r4
+cmp r6 r7
+brc L3
+jpr L1
+L2 mvr r3 r2 -- move r2 into r3 as new max
+jpr L1 -- go back to L1 after setting new max
+L3 sta r1 r4 -- store max into r1 after the loop is done
+
+
