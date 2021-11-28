@@ -1,0 +1,63 @@
+cwp
+wpl
+mil r0, 00
+mih r0, 50	; location 0x5000
+mil r1, 01
+mih r1, 00
+mil r2, 00
+mih r2, 02	; location 0x0200 (User Program)
+sta r0, r2
+
+
+-----
+
+cwp
+wpl
+mil r0, 00
+mih r0, 00
+mil r1, 01	; constant 1 for wpl
+mih r1, 00
+mil r2, 00	
+mih r2, 01	; 0x0100 = 256
+wph
+mil r4, 01
+mih r4, 00	; r4 = constant 1
+mil r5, 00
+mih r5, 09	; write to address 0x0900
+mil r6, FF
+mih r6, 09	; address 0x09FF
+mil r7, 01
+mih r7, 50	; location 0x5001
+L10
+
+wph
+sta r7, r4	; store data from memory address 0x0001 to location 0x5001
+sta r5, r7	; store data from memory address 0x5001 to location 0x09XX
+
+;L02
+add r5, r4	; add 1 to r5
+
+wpl
+add r0, r1	; add 1 to r0
+brc L2		; break if carry
+cmp r2, r0	; compare stored to 256
+inte
+oup
+awp 8		; add an extra window pointer tab
+awp 9		; add an extra window pointer tab
+awp 10		; add an extra window pointer tab
+mil r0, 00
+mih r0, 55
+mil r1, FF
+mih r1, 55
+mil r2, 01
+mih r2, 00
+add r0, r2
+cmp r1, r2
+oup r1
+intd
+brc L2		; stop if done
+jpr L10		; otherwise jump back to L10 
+
+;L2
+
