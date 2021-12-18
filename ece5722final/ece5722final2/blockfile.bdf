@@ -1,0 +1,225 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 456 496 632 512)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "button[7..0]" (rect 9 0 65 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 456 416 632 432)
+	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
+	(text "clk_input" (rect 9 0 52 12)(font "Arial" ))
+	(pt 176 8)
+	(drawing
+		(line (pt 92 12)(pt 117 12))
+		(line (pt 92 4)(pt 117 4))
+		(line (pt 121 8)(pt 176 8))
+		(line (pt 92 12)(pt 92 4))
+		(line (pt 117 4)(pt 121 8))
+		(line (pt 117 12)(pt 121 8))
+	)
+	(text "VCC" (rect 136 7 156 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 888 120 1064 136)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "HEX3[6..0]" (rect 90 0 143 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 888 136 1064 152)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "HEX2[6..0]" (rect 90 0 143 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 888 152 1064 168)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "HEX1[6..0]" (rect 90 0 143 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 888 168 1064 184)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "HEX0[6..0]" (rect 90 0 143 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 632 352 1128 536)
+	(text "qsysDesign" (rect 215 -1 295 15)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 168 25 180)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 37 14)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 41 75)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 224 72))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "switchin_external_connection_export[7..0]" (rect 0 0 243 14)(font "Arial" (font_size 8)))
+		(text "switchin_external_connection_export[7..0]" (rect 4 141 247 155)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 224 152)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(output)
+		(text "dataout_external_connection_export[15..0]" (rect 0 0 244 14)(font "Arial" (font_size 8)))
+		(text "dataout_external_connection_export[15..0]" (rect 4 101 248 115)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 224 112)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 209 43 226 58)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 229 67 243 79)(font "Arial" (color 0 0 0)))
+		(text "dataout_external_connection" (rect 59 83 245 98)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 107 259 119)(font "Arial" (color 0 0 0)))
+		(text "switchin_external_connection" (rect 55 123 246 138)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "export" (rect 229 147 259 159)(font "Arial" (color 0 0 0)))
+		(text " qsysDesign " (rect 443 168 509 180)(font "Arial" ))
+		(line (pt 224 32)(pt 272 32))
+		(line (pt 272 32)(pt 272 168))
+		(line (pt 224 168)(pt 272 168))
+		(line (pt 224 32)(pt 224 168))
+		(line (pt 225 52)(pt 225 76))
+		(line (pt 226 52)(pt 226 76))
+		(line (pt 225 92)(pt 225 116))
+		(line (pt 226 92)(pt 226 116))
+		(line (pt 225 132)(pt 225 156))
+		(line (pt 226 132)(pt 226 156))
+		(line (pt 0 0)(pt 496 0))
+		(line (pt 496 0)(pt 496 184))
+		(line (pt 0 184)(pt 496 184))
+		(line (pt 0 0)(pt 0 184))
+	)
+)
+(symbol
+	(rect 672 96 888 208)
+	(text "firstAndLastTo7seg1" (rect 5 0 106 12)(font "Arial" ))
+	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "dataInput[15..0]" (rect 0 0 77 12)(font "Arial" ))
+		(text "dataInput[15..0]" (rect 21 27 98 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "segOut1[6..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "segOut1[6..0]" (rect 139 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "segOut2[6..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "segOut2[6..0]" (rect 139 43 195 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
+	)
+	(port
+		(pt 216 64)
+		(output)
+		(text "segOut3[6..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "segOut3[6..0]" (rect 139 59 195 71)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64)(line_width 3))
+	)
+	(port
+		(pt 216 80)
+		(output)
+		(text "segOut4[6..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "segOut4[6..0]" (rect 139 75 195 87)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 96))
+	)
+)
+(connector
+	(pt 632 464)
+	(pt 368 464)
+	(bus)
+)
+(connector
+	(pt 368 464)
+	(pt 368 128)
+	(bus)
+)
+(connector
+	(pt 672 128)
+	(pt 368 128)
+	(bus)
+)
